@@ -4,8 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-cameras',
   imports: [],
   templateUrl: './cameras.component.html',
-  styleUrl: './cameras.component.scss'
+  styleUrl: './cameras.component.scss',
 })
-export class CamerasComponent {
-
-}
+export class CamerasComponent {}
