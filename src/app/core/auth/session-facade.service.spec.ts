@@ -7,7 +7,6 @@ import { of, throwError } from 'rxjs';
 import { SessionStateService } from './session-state.service';
 import { Router } from '@angular/router';
 import { dashboardRouteConfig, signInRouteConfig } from '../../shared/config/routes.config';
-import { provideHttpClientTesting } from '@angular/common/http/testing';
 
 describe('SessionFacadeService', () => {
   let service: SessionFacadeService;
@@ -17,7 +16,7 @@ describe('SessionFacadeService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [provideHttpClient(), provideHttpClientTesting()],
+      providers: [provideHttpClient()],
     });
     service = TestBed.inject(SessionFacadeService);
     sessionService = TestBed.inject(SessionService);
