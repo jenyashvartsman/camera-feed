@@ -15,8 +15,8 @@ export class SessionService {
 
   /**
    * Sign in to the session service.
-   * @param payload - The sign-in request payload containing username and password.
-   * @returns An observable of the sign-in response.
+   * @param {SignInRequest} payload - The sign-in request payload containing username and password.
+   * @returns {SignInResponse} An observable of the sign-in response.
    */
   signIn(payload: SignInRequest): Observable<SignInResponse> {
     return this.http.post<SignInResponse>(`${this.apiUrl}/user`, payload);
@@ -24,7 +24,7 @@ export class SessionService {
 
   /**
    * Sign out of the session service.
-   * @param id - The ID of the session to sign out.
+   * @param {string} id - The ID of the session to sign out.
    * @returns An observable that completes when the sign-out is successful.
    */
   signOut(id: string): Observable<void> {

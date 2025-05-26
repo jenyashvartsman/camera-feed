@@ -13,7 +13,10 @@ export class StreamsService {
 
   /**
    * Get stream frame.
-   * @returns {any} An observable of stream frame.
+   * @param {string} id - The ID of the stream.
+   * @param {number} [height] - Optional height of the frame.
+   * @param {number} [width] - Optional width of the frame.
+   * @returns {Blob} An observable of stream frame.
    */
   getFrame(id: string, height?: number, width?: number): Observable<Blob> {
     const params: any = { height, width };
