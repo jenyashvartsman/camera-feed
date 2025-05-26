@@ -3,14 +3,11 @@
   <header class="layout__header">
     <mat-toolbar class="layout__toolbar">
       <div class="layout__toolbarInner">
+        <!-- title -->
         <span>Camera Feed</span>
 
-        <button
-          mat-icon-button
-          class="example-icon"
-          aria-label="Example icon-button with share icon"
-          (click)="signOutClick()"
-        >
+        <!-- logout -->
+        <button mat-icon-button (click)="signOutClick()">
           <mat-icon>logout</mat-icon>
         </button>
       </div>
