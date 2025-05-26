@@ -21,7 +21,7 @@ describe('CameraStreamFacadeService', () => {
     spyOn(streamsService, 'getFrame').and.returnValue(of(new Blob()));
     const id = 'stream1';
     service.streamRefresh(id);
-    expect(streamsService.getFrame).toHaveBeenCalledWith(id);
+    expect(streamsService.getFrame).toHaveBeenCalledWith(id, 400, 400);
     expect(service.loading()).toBeFalse();
     expect(service.error()).toBeFalse();
     expect(service.stream()).toBeTruthy();
