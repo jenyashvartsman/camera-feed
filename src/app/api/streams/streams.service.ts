@@ -15,7 +15,11 @@ export class StreamsService {
    * Get stream frame.
    * @returns {any} An observable of stream frame.
    */
-  getFrame(id: string): Observable<Blob> {
-    return this.http.get(`${this.apiUrl}/${id}/frame`, { responseType: 'blob' });
+  getFrame(id: string, height?: number, width?: number): Observable<Blob> {
+    const params: any = { height, width };
+    return this.http.get(`${this.apiUrl}/${id}/frame`, {
+      responseType: 'blob',
+      params,
+    });
   }
 }

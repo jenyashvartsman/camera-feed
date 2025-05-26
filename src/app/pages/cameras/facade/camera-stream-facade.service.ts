@@ -55,7 +55,7 @@ export class CameraStreamFacadeService implements OnDestroy {
       this._loading.set(true);
       this._error.set(false);
 
-      this.streamService.getFrame(id).subscribe({
+      this.streamService.getFrame(id, 400, 400).subscribe({
         next: (response) => {
           this._loading.set(false);
           const blob = new Blob([response]);
