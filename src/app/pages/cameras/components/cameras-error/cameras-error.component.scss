@@ -1,0 +1,15 @@
+.camerasError {
+  margin-top: 5rem;
+  text-align: center;
+
+  &__icon {
+    width: 4rem;
+    height: 4rem;
+    font-size: 4rem;
+  }
+
+  &__message {
+    font-size: 1.35rem;
+    margin-bottom: 1rem;
+  }
+}

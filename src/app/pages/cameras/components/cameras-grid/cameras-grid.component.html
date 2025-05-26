@@ -1,0 +1,9 @@
+<div class="camerasGrid">
+  @for (camera of cameras; track camera.id) {
+    <app-camera-card [camera]="camera" />
+  } @empty {
+    <div class="camerasGrid__empty">
+      <p>No cameras found.</p>
+    </div>
+  }
+</div>

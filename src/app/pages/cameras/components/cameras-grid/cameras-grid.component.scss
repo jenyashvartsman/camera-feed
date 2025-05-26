@@ -1,0 +1,12 @@
+.camerasGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+  .camerasGrid {
+    display: flex;
+    flex-direction: column;
+  }
+}

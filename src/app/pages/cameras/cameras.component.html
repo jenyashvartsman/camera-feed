@@ -1,1 +1,11 @@
-<p>cameras works!</p>
+<div class="cameras">
+  <h2 class="cameras__title">Cameras</h2>
+
+  @if (camerasLoading()) {
+    <app-cameras-loading />
+  } @else if (camerasError()) {
+    <app-cameras-error />
+  } @else {
+    <app-cameras-grid [cameras]="cameras().cameras" />
+  }
+</div>

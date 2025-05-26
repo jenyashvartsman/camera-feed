@@ -1,0 +1,28 @@
+<mat-card class="cameraCard" appearance="outlined">
+  <!-- image -->
+  <div class="cameraCard__imgWrapper">
+    @if (stream()) {
+      <img mat-card-image class="cameraCard__img" [src]="stream()" [alt]="camera.name" />
+    } @else {
+      <p class="cameraCard__error">
+        <mat-icon aria-hidden="false" fontIcon="videocam_off" />
+        No stream available
+      </p>
+    }
+  </div>
+
+  <!-- content -->
+  <mat-card-content class="cameraCard__content">
+    <!-- name -->
+    <span class="cameraCard__name">{{ camera.name }}</span>
+
+    <!-- refresh timestamp -->
+    <span class="cameraCard__timestamp">
+      @if (loading()) {
+        Refreshing...
+      } @else if (timestamp()) {
+        {{ timestamp() | date: 'medium' }}
+      }
+    </span>
+  </mat-card-content>
+</mat-card>
