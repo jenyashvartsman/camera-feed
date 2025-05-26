@@ -8,16 +8,38 @@ describe('SignInFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SignInFormComponent]
-    })
-    .compileComponents();
+      imports: [SignInFormComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(SignInFormComponent);
     component = fixture.componentInstance;
+
+    component.isLoading = false;
+    component.errorMessage = null;
+
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+
+    expect(component.signInForm).toBeTruthy();
+    expect(component.isLoading).toBeFalse();
+    expect(component.errorMessage).toBeNull();
+  });
+
+  it('should emit submit', () => {
+    spyOn(component.submitClicked, 'emit');
+    component.signInForm.patchValue({
+      username: 'john',
+      password: '123',
+    });
+
+    component.onSubmit();
+
+    expect(component.submitClicked.emit).toHaveBeenCalledWith({
+      username: 'john',
+      password: '123',
+    });
   });
 });

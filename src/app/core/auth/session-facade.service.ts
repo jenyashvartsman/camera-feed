@@ -69,7 +69,7 @@ export class SessionFacadeService {
   signOut(): void {
     const user = this.sessionStateService.user();
     if (user?.id) {
-      this.sessionService.signOut(user!.id).subscribe({
+      this.sessionService.signOut(user.id).subscribe({
         next: () => {
           this.sessionStateService.setUser(null);
           this.router.navigate([signInRouteConfig]);
