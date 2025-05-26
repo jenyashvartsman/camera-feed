@@ -1,0 +1,47 @@
+<form class="signInForm" [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+  <!-- username input -->
+  <mat-form-field appearance="fill">
+    <mat-label>Username</mat-label>
+    <input matInput formControlName="username" type="text" />
+  </mat-form-field>
+
+  <!-- password input -->
+  <mat-form-field appearance="fill">
+    <mat-label>Password</mat-label>
+    <input
+      matInput
+      formControlName="password"
+      type="password"
+      [type]="hidePassword ? 'password' : 'text'"
+    />
+    <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword" type="button">
+      <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <!-- sign in button -->
+  <button
+    class="signInForm__button"
+    mat-flat-button
+    color="primary"
+    type="submit"
+    [disabled]="signInForm.invalid || isLoading"
+  >
+    Sign In
+  </button>
+
+  <!-- sign in progress -->
+  @if (isLoading) {
+    <mat-progress-spinner
+      diameter="20"
+      mode="indeterminate"
+      color="accent"
+      class="signInForm__spinner"
+    />
+  }
+
+  <!-- error message -->
+  @if (errorMessage) {
+    <mat-error class="signInForm__error">{{ errorMessage }}</mat-error>
+  }
+</form>

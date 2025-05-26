@@ -1,1 +1,17 @@
-<p>sign-in works!</p>
+<div class="signIn">
+  <mat-card appearance="outlined" class="signIn__card">
+    <!-- title -->
+    <mat-card-header class="signIn__header">
+      <mat-card-title>Sign In</mat-card-title>
+    </mat-card-header>
+
+    <!-- form -->
+    <mat-card-content>
+      <app-sign-in-form
+        [isLoading]="isLoading()"
+        [errorMessage]="errorMessage()"
+        (submitClicked)="signIn($event.username, $event.password)"
+      />
+    </mat-card-content>
+  </mat-card>
+</div>

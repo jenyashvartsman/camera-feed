@@ -1,9 +1,24 @@
 <div class="layout">
   <!-- header -->
-  <header class="layout__header">Header</header>
+  <header class="layout__header">
+    <mat-toolbar class="layout__toolbar">
+      <div class="layout__toolbarInner">
+        <span>Camera Feed</span>
+
+        <button
+          mat-icon-button
+          class="example-icon"
+          aria-label="Example icon-button with share icon"
+          (click)="signOutClick()"
+        >
+          <mat-icon>logout</mat-icon>
+        </button>
+      </div>
+    </mat-toolbar>
+  </header>
 
   <!-- router -->
-  <main>
+  <main class="layout__main">
     <router-outlet />
   </main>
 </div>

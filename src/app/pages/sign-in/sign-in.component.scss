@@ -1,0 +1,13 @@
+.signIn {
+  &__card {
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 2rem 0.5rem;
+    margin-top: 4rem;
+  }
+
+  &__header {
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+}
