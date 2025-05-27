@@ -2,6 +2,12 @@ import { Routes } from '@angular/router';
 import { authGuard } from './core/auth/auth.guard';
 
 export const routes: Routes = [
+  // Default route
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'dashboard',
+  },
   // Authentication routes
   {
     path: 'sign-in',
@@ -23,14 +29,12 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./pages/cameras/cameras.component').then((c) => c.CamerasComponent),
       },
-      // Fallback route
       {
         path: '**',
         redirectTo: 'cameras',
       },
     ],
   },
-  // Fallback route
   {
     path: '**',
     redirectTo: 'sign-in',
