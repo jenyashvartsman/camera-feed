@@ -1,9 +1,13 @@
 .signIn {
+  display: flex;
+  justify-content: center;
+  padding-top: 6rem;
+
   &__card {
+    width: 100%;
     max-width: 450px;
-    margin: 0 auto;
-    padding: 2rem 0.5rem;
-    margin-top: 4rem;
+    margin: 0 1rem;
+    padding: 1rem 0.5rem;
   }
 
   &__header {
