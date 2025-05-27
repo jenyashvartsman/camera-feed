@@ -1,12 +1,24 @@
-$width: 1400px;
-$padding-x: 2rem;
+$screen-max-width: 1400px;
+$screen-padding-x: 2rem;
+$header-height: 4rem;
 
 .layout {
+  position: relative;
+
+  &__toolbar {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: $header-height;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
   &__toolbarInner {
     width: 100%;
-    max-width: $width;
+    max-width: $screen-max-width;
     margin: 0 auto;
-    padding: 0 $padding-x;
+    padding: 0 $screen-padding-x;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -14,8 +26,10 @@ $padding-x: 2rem;
   }
 
   &__main {
-    max-width: $width;
+    position: relative;
+    top: $header-height;
+    max-width: $screen-max-width;
     margin: 0 auto;
-    padding: 1.25rem calc($padding-x + 1rem);
+    padding: 1.25rem calc($screen-padding-x);
   }
 }
