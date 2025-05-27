@@ -42,7 +42,7 @@ export class SessionFacadeService {
       next: (response) => {
         this._signInLoading.set(false);
         this._signInError.set(null);
-        this.sessionStateService.setUser(response);
+        this.sessionStateService.setUser({ id: response.id, name: response.name });
         this.router.navigate([dashboardRouteConfig]);
       },
       error: (error) => {

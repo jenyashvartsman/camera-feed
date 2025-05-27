@@ -25,6 +25,17 @@ $header-height: 4rem;
     gap: 1rem;
   }
 
+  &__toolbarActions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__toolbarName {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
   &__main {
     position: relative;
     top: $header-height;

@@ -6,9 +6,13 @@
       <span>Camera Feed</span>
 
       <!-- logout -->
-      <button mat-icon-button (click)="signOutClick()">
-        <mat-icon>logout</mat-icon>
-      </button>
+      <div class="layout__toolbarActions">
+        <span class="layout__toolbarName">{{ name }}</span>
+
+        <button mat-icon-button (click)="signOutClick()">
+          <mat-icon>logout</mat-icon>
+        </button>
+      </div>
     </div>
   </mat-toolbar>
 
