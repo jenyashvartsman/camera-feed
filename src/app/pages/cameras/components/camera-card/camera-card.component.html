@@ -2,7 +2,13 @@
   <!-- image -->
   <div class="cameraCard__imgWrapper">
     @if (stream()) {
-      <img mat-card-image class="cameraCard__img" [src]="stream()" [alt]="camera.name" />
+      <img
+        mat-card-image
+        [id]="'img-' + camera.primaryStream.id"
+        class="cameraCard__img"
+        [src]="stream()"
+        [alt]="camera.name"
+      />
     } @else {
       <p class="cameraCard__error">
         <mat-icon aria-hidden="false" fontIcon="videocam_off" />

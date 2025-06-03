@@ -58,10 +58,13 @@ export class CameraStreamFacadeService implements OnDestroy {
       this.streamService.getFrame(id, 400, 400).subscribe({
         next: (response) => {
           this._loading.set(false);
-          const blob = new Blob([response]);
-          const streamData = URL.createObjectURL(blob);
-          this._stream.set(streamData);
+          const stream = URL.createObjectURL(response);
+          this._stream.set(stream);
           this._timestamp.set(new Date());
+
+          // TODO - will fail if called here
+          // needs to be called only after image is loaded, requires some refactor on how stream() is handled
+          // URL.revokeObjectURL(stream);
         },
         error: () => {
           this._loading.set(false);
